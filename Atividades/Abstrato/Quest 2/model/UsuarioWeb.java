@@ -6,6 +6,7 @@ public class UsuarioWeb extends Usuario implements Autenticavel {
     @Override
     public boolean autenticar() {
         System.out.println("Autenticando " + getNome() + " por login e senha...");
+        this.exibeDados();
         return true;
     }
 

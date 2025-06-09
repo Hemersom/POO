@@ -6,6 +6,7 @@ public class UsuarioAPI extends Usuario implements Autenticavel {
     @Override
     public boolean autenticar() {
         System.out.println("Autenticando " + getNome() + " por token de API...");
+        this.exibeDados();
         return true;
     }
 
