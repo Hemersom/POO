@@ -1,8 +1,8 @@
 public class Agenda {
-    private String proprietario;
-    private Pessoa[] pessoas;
-    private int max;
-    private int cont;
+    protected String proprietario;
+    protected Pessoa[] pessoas;
+    protected int max;
+    protected int cont;
 
     public Agenda(String proprietario, int max) {
         this.proprietario = proprietario;
@@ -83,31 +83,30 @@ public class Agenda {
         }
     }
 
-    public void recuperarPessoaPorEmail(String email) {
-        for (int i = 0; i < cont; i++) {
-            if (pessoas[i].possuiContato("email")) {
-                Email e = (Email) pessoas[i].getContatos("email");
-                if (e != null && e.getEmail().equalsIgnoreCase(email)) {
+
+    public void recuperarPessoaPorEmail(String email){
+        for(int i = 0; i < cont; i++){
+            for(Contato c : pessoas[i].getContatos()){
+                if(c instanceof Email && ((Email)c).getEmail().equalsIgnoreCase(email)){
                     System.out.println("Pessoa encontrada: " + pessoas[i].getNome());
                     return;
                 }
             }
         }
-        System.out.println("Nenhuma pessoa encontrada com o email: " + email);
     }
 
-    public void recuperarPessoaPorTelefone(String telefone) {
-        for (int i = 0; i < cont; i++) {
-            if (pessoas[i].possuiContato("telefone")) {
-                Telefone t = (Telefone) pessoas[i].getContatos("telefone");
-                if (t != null && t.getTelefone().equalsIgnoreCase(telefone)) {
+    public void recuperarPessoaPorTelefone(String telefone){
+        for(int i = 0; i < cont; i++){
+            for(Contato c : pessoas[i].getContatos()){
+                if(c instanceof Telefone && ((Telefone)c).getTelefone().equalsIgnoreCase(telefone)){
                     System.out.println("Pessoa encontrada: " + pessoas[i].getNome());
                     return;
                 }
             }
         }
-        System.out.println("Nenhuma pessoa encontrada com o telefone: " + telefone);
     }
+
+    
     
 
 }
