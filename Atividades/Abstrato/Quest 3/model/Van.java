@@ -19,9 +19,10 @@ public class Van extends Veiculo implements Alugavel {
 
     @Override
     public void exibirDados(){
-        System.out.println("Carro: ");
+        System.out.println("Van");
         System.out.println("Placa: "+this.getPlaca());
         System.out.println("Marca: "+this.getMarca());
+        System.out.println("Modelo: "+this.getModelo());
         System.out.println("Ano: "+this.getAno_fabricacao());
         System.out.println("Portas: "+this.getCapacidadePassageiros());
         System.out.println("Pode alugar ? "+(this.podeAlugar()? "Sim":"Não"));

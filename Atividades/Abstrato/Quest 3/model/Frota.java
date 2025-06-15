@@ -10,7 +10,7 @@ public class Frota {
     protected Alugavel[] veiculoAlugaveis;
 
     public Frota(int max) {
-        this.max = max < 0 ? 10 : max;
+        this.max = max <= 0 ? 10 : max;
         this.veiculos = new Veiculo[this.max];
         this.veiculoAlugaveis = new Alugavel[this.max];
         this.countVeiculos = 0;
@@ -36,7 +36,7 @@ public class Frota {
     public void listarTudo() {
         System.out.println("=== VEÍCULOS CADASTRADOS ===");
         for (Veiculo v : veiculos) {
-            v.exibirDados();
+            if(v!=null) v.exibirDados();
         }
     }
 
@@ -71,15 +71,15 @@ public class Frota {
     }
 
     public void exibirAlugaveis(int nDias) {
+        nDias = nDias <= 0 ? 10 : nDias;
         System.out.println("=== VEÍCULOS ALUGÁVEIS (" + nDias + " dias) ===");
         boolean encontrou = false;
 
         for (int i = 0; i < countAlugaveis; i++) {
             Alugavel a = veiculoAlugaveis[i];
 
-            if (a instanceof Veiculo) {
-                Veiculo v = (Veiculo) a;
-                System.out.println(v + " – Valor para " + nDias + " dias: R$ " + a.calcularValorAluguel(nDias));
+            if (a instanceof Veiculo v) {
+                System.out.println(v + " - Valor para " + nDias + " dias: R$ " + a.calcularValorAluguel(nDias));
                 encontrou = true;
             }
         }

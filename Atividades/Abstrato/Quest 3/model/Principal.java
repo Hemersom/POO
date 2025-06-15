@@ -7,6 +7,10 @@ public class Principal {
         Scanner input = new Scanner(System.in);
         int qtd = input.nextInt();
         input.nextLine();
+        if (qtd <= 0) {
+            System.out.println("Quantidade inválida, outro valor será usado."); 
+            
+        }
         Frota carros = new Frota(qtd);
         while(true){
             exe(carros, input);
@@ -29,43 +33,25 @@ public class Principal {
         int opc = input.nextInt();
         input.nextLine();
         switch (opc) {
-            case 1:
-                carros.addVeiculo(input, "Carro");
-                break;
-            case 2:
-                carros.addVeiculo(input, "Van");
-                break;
-            case 3:
-                carros.addVeiculo(input, "Caminhao");
-                break;
-            case 4:
+            case 1 -> carros.addVeiculo(input, "Carro");
+            case 2 -> carros.addVeiculo(input, "Caminhao");
+            case 3 -> carros.addVeiculo(input, "Van");
+            case 4 -> {
                 System.out.println("Digite a placa: ");
                 carros.buscarPlaca(input.next());
-                break;
-            case 5:
-                carros.listarVeiculosPorTipo("Carro");
-                break;
-            case 6:
-                carros.listarVeiculosPorTipo("Caminhao");
-                break;
-            case 7:
-                carros.listarVeiculosPorTipo("Van");
-                break;
-            case 8:
-                carros.listarTudo();
-                break;
-            case 9:{
+            }
+            case 5 -> carros.listarVeiculosPorTipo("Carro");
+            case 6 -> carros.listarVeiculosPorTipo("Caminhao");
+            case 7 -> carros.listarVeiculosPorTipo("Van");
+            case 8 -> carros.listarTudo();
+            case 9 -> {
                 System.out.println("Digite a quantidade de dias: ");
                 int nDias = input.nextInt();
+                input.nextLine();
                 carros.exibirAlugaveis(nDias);
             }
-            break;
-            case 0:
-                System.out.println("Saindo...");
-                break;
-            default:
-                System.out.println("ERRO");
-                break;
+            case 0 -> System.out.println("Saindo...");
+            default -> System.out.println("ERRO");
         }
 
     }

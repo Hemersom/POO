@@ -34,9 +34,10 @@ public class Caminhao extends Veiculo {
     
     @Override
     public void exibirDados(){
-        System.out.println("Carro: ");
+        System.out.println("Caminhão ");
         System.out.println("Placa: "+this.getPlaca());
         System.out.println("Marca: "+this.getMarca());
+        System.out.println("Modelo: "+this.getModelo());
         System.out.println("Ano: "+this.getAno_fabricacao());
         System.out.println("Capacidade: "+this.getCapacidade()+ "Kg");
         System.out.println("Eixos: "+this.getnEixos());
