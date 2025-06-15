@@ -12,7 +12,7 @@ public class Principal {
             
         }
         Frota carros = new Frota(qtd);
-        while(exe(carros, input)){
+            while(exe(carros, input)){
         }
         
     }
