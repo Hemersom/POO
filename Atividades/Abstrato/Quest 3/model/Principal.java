@@ -12,12 +12,11 @@ public class Principal {
             
         }
         Frota carros = new Frota(qtd);
-        while(true){
-            exe(carros, input);
+        while(exe(carros, input)){
         }
         
     }
-    public static void exe(Frota carros,Scanner input){
+    public static boolean exe(Frota carros,Scanner input){
         System.out.println("+---------- MENU ----------+");
         System.out.println("1 - Adicionar carro;");
         System.out.println("2 - Adicionar caminhão;");
@@ -50,11 +49,15 @@ public class Principal {
                 input.nextLine();
                 carros.exibirAlugaveis(nDias);
             }
-            case 0 -> System.out.println("Saindo...");
+            case 0 ->{ 
+                System.out.println("Saindo..."); 
+                return false;}
             default -> System.out.println("ERRO");
         }
 
+        return true;
     }
+    
 
     
 }
