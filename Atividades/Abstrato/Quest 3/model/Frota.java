@@ -105,7 +105,7 @@ public class Frota {
         int ano = input.nextInt();
         input.nextLine();
 
-        Veiculo v = null;
+        Veiculo v;
 
         if (tipo.equalsIgnoreCase("Carro")) {
             System.out.println("Digite o número de portas: ");
