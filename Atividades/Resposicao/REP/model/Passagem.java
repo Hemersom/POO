@@ -9,7 +9,7 @@ public class Passagem {
     public Passagem(String nome, double valor){
         this.nomePassageiro = nome;
         this.valorBase = valor < 0 ? 0:valor;
-    }
+    }       
 
     public String getNomePassageiro() {
         return nomePassageiro;
