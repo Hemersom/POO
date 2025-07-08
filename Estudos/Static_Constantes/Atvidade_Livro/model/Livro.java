@@ -1,9 +1,21 @@
-public class Livro extends Constantes{
+public class Livro {
     protected String isbn;
     protected String titulo;
     protected int quantidadeCapitulos;
     protected Capitulo[] capitulos;
 
+    public String getIsbn() {
+        return isbn;
+    }
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+    public String getTitulo() {
+        return titulo;
+    }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
     public Livro(String isbn, String titulo){
         this.isbn = isbn;
         this.titulo = titulo;
@@ -28,8 +40,9 @@ public class Livro extends Constantes{
     }
     public void exibirRelatorio(){
         System.out.println("=== RELATÓRIO DO LIVRO ===");
-        System.out.println("Editora: "+this.EDITORA);
-        System.out.println("Título: "+this.titulo);
+        System.out.println("Editora: "+Constantes.EDITORA);
+        System.out.println("ISBN: "+this.getIsbn());
+        System.out.println("Título: "+this.getTitulo());
         System.out.println("Capítulos: ");
         for(int i =0; i<this.quantidadeCapitulos;i++){
             System.out.println(capitulos[i]);

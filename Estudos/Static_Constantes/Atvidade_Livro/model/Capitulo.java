@@ -12,9 +12,41 @@ public class Capitulo {
         this.quantidadesPaginas = qtdPg <= 0? 1:qtdPg;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+
+
+    public int getQuantidadesPaginas() {
+        return quantidadesPaginas;
+    }
+
+
+
+    public void setQuantidadesPaginas(int quantidadesPaginas) {
+        this.quantidadesPaginas = quantidadesPaginas;
+    }
+
+
+
+    public static int getNumeroAtual() {
+        return numeroAtual;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
     @Override
     public String toString() {
-        return "Capitulo "+this.numero+" - "+this.titulo+"("+this.quantidadesPaginas+" páginas)\n";
+        return "Capitulo "+this.getNumero()+" - "+this.getTitulo()+"("+this.getQuantidadesPaginas()+" páginas)";
     }
 
     
